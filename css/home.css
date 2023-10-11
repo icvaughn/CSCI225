@@ -1,0 +1,204 @@
+:root{
+    --font-color: hsla(32, 90%, 43%, 0.9);
+    --bar-color: hsla(216, 69%, 45%, 1);
+
+
+}
+
+
+@font-face {
+  
+    font-family: 'yarta';
+    src: url(../data/Yatra_One/YatraOne-Regular.ttf);
+
+}
+
+
+
+body{
+    background-image: url(../img/background.jpg);
+    z-index: 0;
+}
+
+
+li{
+    font-family: 'yarta', cursive;
+    font-weight: 400;
+    color: var(--font-color);
+
+    
+}
+
+h1{
+    text-transform: capitalize;
+    letter-spacing: 10px;
+    text-shadow: red 2px 5px;
+    font-size: large;
+    text-align: center;
+    color: hsl(113, 78%, 61%);
+    background-color: hsl(226, 64%, 70%);
+    border-radius: 20px 30%;
+    transform: translate(3px,2px);
+
+}
+
+h1:hover{
+    font-size: x-large;
+    transition: 2s ease-in-out;
+}
+
+p{
+    line-height:100%;
+    text-align: center;
+    word-wrap: break-word;
+    white-space: normal;
+    color: hsl(71, 78%, 61%);
+}
+
+p::first-letter{
+    text-transform: capitalize;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(12, 194, 118);
+
+}
+
+a:hover{
+    font-size: large;
+    color: #26ec0c;
+
+}
+
+div.introduction{
+    position: fixed;
+    left: 0%;
+    padding: 1%;
+    top: 10%;
+    bottom: 60%;
+    width: 90%;
+    /* background-color: hsla(170, 68%, 48%,.9); */
+    z-index: 5;
+
+}
+
+div.introduction p{
+    position: fixed;
+    float: left;
+    width: 50vw;
+
+}
+
+div.introduction h1{
+    left: 0%;
+    right: 10%;
+}
+
+div.introduction img{
+    position: fixed;
+    float: right;
+    height: 30vh;
+    width: 30vw;
+    top: 10%;
+    left: 70%;
+    border-radius: 60%;
+}  
+
+div.navbar{
+    position: fixed;
+    top: 0%;
+    bottom: 90%;
+    width: 100%;
+    left: 0%;
+    background-color: var(--bar-color); 
+    z-index: 3;
+}
+
+div.navbar li{
+    display: inline-block;
+    background-color: hsl(27, 92%, 48%);
+    margin-right: 5%;
+    border-radius: 25px 80%/50px 50%;
+}
+
+div.foot{
+    position: fixed;
+    bottom: 0%;
+    top: 95%;
+    left: 0%;
+    width: 100%;
+    text-align: center;
+    background-color:var(--bar-color);
+    z-index: 3;
+}
+
+div.assignment{
+    position: absolute;
+    left: 60%;
+    right: 0%;
+    top: 38%;
+    /* background-color: crimson; */
+    z-index: 5;
+
+}
+div.assignment h1{
+    text-align: center;
+}
+
+div.assignment li{
+    display: inline-block;
+}
+
+div.portfolio{
+position: fixed;
+top: 40%;
+bottom: 15%;
+/* background-color: beige; */
+right: 40%;
+border: 3px solid #fff;
+
+}
+
+div.pordolio p:nth-of-type(1){
+    box-shadow: 5px 5px #c20e0e;
+}
+
+div.adress{
+    position: fixed;
+    top: 84%;
+    left: 0%;
+    right: 40%;
+    /* width: 59%; */
+    border: 3px solid #fff;
+    /* background-color: blue; */
+    text-align: center;
+
+
+}
+
+div.schedule{
+    position: fixed;
+    top: 51%;
+    left: 60%;
+    right: 0%;
+    bottom: 5%;
+    border: 3px solid #fff;
+}
+
+div.schedule p{
+    font-size: xx-small;
+}
+
+
+td:nth-child(2n){
+    background-color: #1f89ec6e;
+}
+
+table{
+    border: #fff solid 3px;
+    padding: .05%;
+    vertical-align: middle;
+    empty-cells: hide;
+
+}
