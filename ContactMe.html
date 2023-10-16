@@ -39,26 +39,33 @@
             <div class="col">
 
                 <form action="none" name="feedback">
-                    <div class="form-floating mb-2">
-                    <input type="text" class="form-control" name="fname" id="fname" placeholder="anonymous">
-                    <label for="fname"> First Name</label>
+
+                    <div class="form-floating mt-3 mb-2">
+                        <input type="text" class="form-control" name="fname" id="nameA" placeholder="anonymous">
+                        <label for="nameA"> First Name</label>
                     </div>
+
+
+                    <form class="form-floating">
+                        <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="test@example.com">
+                        <label for="floatingInputValue">Input with value</label>
+                      </form>
 
                     <br>
 
                     <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="lname"  placeholder="anonymous">
-                    <label for="lname"> last name</label>
+                        <input type="text" class="form-control" name="lname" id="nameB" placeholder="anonymous">
+                        <label for="nameB"> last name</label>
                     </div>
 
-                    <br>
+
 
                     <div class="form-floating mb-4">
-                    <input type="email" class="form-control" name="mail" id="email" placeholder="name@domain.com">
-                    <label for="email">email</label>
+                        <input type="email" class="form-control" name="mail" id="emailA" placeholder="name@domain.com">
+                        <label for="emailA">email</label>
                     </div>
-                    
-                    <br>
+
+
 
                     <div class="form-group">
                         <p>Do you recomcend this website?</p>
@@ -70,30 +77,33 @@
 
                     <p>What is your favorite website?</p>
                     <div class="form-group">
-                    <p> 
-                       <label class="form-check">google<input type="checkbox" name="browser" value="google"></label> 
-                       <label class="form-check">twitter <input type="checkbox" name="browser" value="twitter"></label>
-                        <label class="form-check">facebook <input type="checkbox" name="browser" value="facebook"></label>
-                    </p>
+                        <p>
+                            <label class="form-check">google<input type="checkbox" name="browser"
+                                    value="google"></label>
+                            <label class="form-check">twitter <input type="checkbox" name="browser"
+                                    value="twitter"></label>
+                            <label class="form-check">facebook <input type="checkbox" name="browser"
+                                    value="facebook"></label>
+                        </p>
                     </div>
 
 
-                
+
                     <div class="form-group">
                         <p>How would you rate the website?</p>
                         <p>
-                        <label class="form-range">
-                            1 <input type="range" name="rating" min="1" max="10" step=".5">10
-                        </label>
+                            <label class="form-range">
+                                1 <input type="range" name="rating" min="1" max="10" step=".5">10
+                            </label>
                         </p>
                     </div>
 
 
                     <p>Commits</p>
                     <div class="form-group">
-                    <p>
-                        <textarea name="commits" cols="30" rows="10"></textarea>
-                    </p>
+                        <p>
+                            <textarea name="commits" cols="30" rows="10"></textarea>
+                        </p>
                     </div>
 
 
