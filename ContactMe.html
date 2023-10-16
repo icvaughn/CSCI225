@@ -39,18 +39,25 @@
             <div class="col">
 
                 <form action="none" name="feedback">
-                    <div class="form-group">
-                    First Name: <input type="text" name="fname" placeholder="anonymous">
+                    <div class="form-floating mb-2">
+                    <input type="text" class="form-control" name="fname" id="fname" placeholder="anonymous">
+                    <label for="fname"> First Name</label>
                     </div>
-                    <br>
-                    <div class="form-group">
-                    Last Name: <input type="text" name="lname" placeholder="anonymous">
-                    </div>
+
                     <br>
 
-                    <div class="form-group">
-                    Email: <input type="email" name="mail" placeholder="name@domain.com">
+                    <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="lname"  placeholder="anonymous">
+                    <label for="lname"> last name</label>
                     </div>
+
+                    <br>
+
+                    <div class="form-floating mb-4">
+                    <input type="email" class="form-control" name="mail" id="email" placeholder="name@domain.com">
+                    <label for="email">email</label>
+                    </div>
+                    
                     <br>
 
                     <div class="form-group">
@@ -62,24 +69,32 @@
 
 
                     <p>What is your favorite website?</p>
-                    <p>google<input type="checkbox" name="browser" value="google">
-                        twitter <input type="checkbox" name="browser" value="twitter">
-                        facebook <input type="checkbox" name="browser" value="facebook">
-                    </p>
-
-
-                    <p>How would you rate the website?</p>
                     <div class="form-group">
+                    <p> 
+                       <label class="form-check">google<input type="checkbox" name="browser" value="google"></label> 
+                       <label class="form-check">twitter <input type="checkbox" name="browser" value="twitter"></label>
+                        <label class="form-check">facebook <input type="checkbox" name="browser" value="facebook"></label>
+                    </p>
+                    </div>
+
+
+                
+                    <div class="form-group">
+                        <p>How would you rate the website?</p>
                         <p>
-                            1 <input type="range" name="rating">10
+                        <label class="form-range">
+                            1 <input type="range" name="rating" min="1" max="10" step=".5">10
+                        </label>
                         </p>
                     </div>
 
 
                     <p>Commits</p>
+                    <div class="form-group">
                     <p>
                         <textarea name="commits" cols="30" rows="10"></textarea>
                     </p>
+                    </div>
 
 
                     <p>favorite color?</p>
