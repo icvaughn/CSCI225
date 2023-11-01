@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<HTML lang="en-us">
+
+<head>
+    <title> CSCI225 webpage of isaac</title>
+    <link rel="stylesheet" href="./css/powerbill.css">
+</head>
+
+<body>
+
+
+    <div class= "navbar">
+        <ul>
+            <li> <a href="https://www.usca.edu/">Usca Website</a></li>
+            <li><a href="#assi">my assignment</a></li>
+            <li><a href="#contact">Contact Info </a></li>
+            <li><a href="readme">readme</a></li>
+            <li><a href="data/data.txt">data.txt</a></li>
+        </ul>
+
+    </div>
+
+
+
+    <div class="introduction">
+        <h1>Georgia Power Bill Calculator</h1>
+        <p>
+            the utility bill Calculator is a resource that the commission is makeing avaliable that allows a consumer to
+            cheak the accracy of his/her monthly elctric bill. a bill calculator has be prepared for the customer of the
+            Georgia Power Conpany. the bill calculator applies only to the residential custmors who are reciving service
+            under the standard ressidental terrif (R-27). for more fetails regarding Georgia's Poawer's residential
+            teriff offerings please visit Georgia Power Priceing & rates.
+
+        </p>
+        <p>
+            Effective Augast 2023
+        </p>
+
+    </div>
+
+    <div class="powerBillForm">
+        <form action="none" name="powerBillForm">
+
+            <p>enter your monthly Usage by Kilowatt Hours (KW/h): <input type="text" id="kwh"></p>
+            <p>enter the number of days in your current billing period: <input type="text" id="billingPeriod"></p>
+            <p>is your residentis INSIDE of the city limits? <input type="checkbox" name="INSIDE" id="INSIDE"
+                    value="yes"></p>
+            <p>is this a summer mounth (Juner-September)? <input type="checkbox" name="Summer" id="Summer" value="Yes">
+            </p>
+            <p>Enter sales tax%: <input type="text" name="salesTax" id="salesTax"></p>
+            <input type="reset" id="reset">
+            <input type="submit" name="submit" id="submit">
+        </form>
+    </div>
+
+
+    <div class="table">
+        <table>
+            <tr>  <td>Iteam</td>  <td> Fees</td>  </tr>
+            <tr>  <td>Base Charge</td>  <td id="tr1"></td>  </tr>
+            <tr>  <td>Teir 1 componet (KW/h)</td>  <td id="tr2"></td>  </tr>
+            <tr>  <td>Teir 2 componet (KW/h)</td>  <td id="tr3"></td>  </tr>
+            <tr>  <td>Tier 3 Componer (KW/h)</td>  <td id="tr4"></td>  </tr>
+            <tr>  <td>Base Redenue -- Base Bill Subtotal:</td>  <td id="tr5"></td>  </tr>
+            <tr>  <td>Fuel Cost Rider</td>  <td id="tr6"></td>  </tr>
+            <tr>  <td>Demand Side Managment Residential Rider</td>  <td id="tr7"></td>  </tr>
+            <tr>  <td>Nuclear Constructor Cost Recovery Rider</td>  <td id="tr8"></td>  </tr>
+            <tr>  <td>Enviormental Compliance Cost Recovery Rider</td>  <td id="tr9"></td>  </tr>
+            <tr>  <td>Total Revenue -- Current Service Subtotal:</td>  <td id="tr10"></td>  </tr>
+            <tr>  <td>Franchise Fee</td>  <td id="tr11"></td>  </tr>
+            <tr>  <td>Total (Excluding Tax)</td>  <td id="tr12"></td>  </tr>
+            <tr>  <td>Total (w/ tax)</td>  <td id="tr13"></td>  </tr>
+        </table>
+
+        <script>
+
+            function calcPowerBill(){
+                var kwh = parseFloat(document.getElementById("kwh").value);
+                var billingPeriod = parseInt(document.getElementById("billingPeriod").value);
+                var INSIDE = document.getElementById("INSIDE").value;
+                var Summer = document.getElementById("Summer").value;
+                var salesTax = parseFloat(document.getElementById("salesTax").value);
+                var baseCharge = .4603 * billingPeriod;
+                baseCharge = baseCharge.toFixed(2);
+                document.getElementById("tr1").textContent = baseCharge;
+
+                switch (Summer) {
+                    case "yes":
+                        var tr2 = 0.066678 * kwh;
+                        var tr3 = 0.110748 * kwh;
+                        var tr4 = 0.114625 * kwh;
+
+                        break;
+                
+                    default:
+
+                        var tr2 = 0.062404 * kwh;
+                        var tr3 = 0.062404 * kwh;
+                        var tr4 = 0.062404 * kwh;
+                        break;
+                }
+
+                tr2 = parseFloat(tr2.toFixed(2));
+                document.getElementById("tr2").textContent = tr2;
+
+                tr3 = parseFloat(tr3.toFixed(2));
+                document.getElementById("tr3").textContent = tr3;
+
+                tr4 = parseFloat(tr4.toFixed(2));
+                document.getElementById("tr4").textContent = tr4;
+
+
+                //var tr5 = baseCharge+tr2+tr3+tr4;
+                var tr5 = tr2 + tr3 +tr4 + baseCharge;
+                tr5 = parseFloat(tr5).toFixed(2);
+                document.getElementById("tr5").textContent = tr5;
+
+                switch (Summer) {
+                    case "yes":
+                        var tr6 = kwh * 0.045876;
+
+                        break;
+                
+                    default:
+                        var tr6 = kwh * 0.042859;
+
+                        break;
+                }
+                tr6 = parseFloat(tr6).toFixed(2);
+                document.getElementById("tr6").textContent = tr6;
+
+                var tr7 = (1.5989 / 100)*tr5;
+                tr7 = parseFloat(tr7).toFixed(2);
+                document.getElementById("tr7").textContent = tr7;
+
+                var tr8 = (4.1562 / 100)*tr5;
+                tr8 = parseFloat(tr8).toFixed(2);
+                document.getElementById("tr8").textContent = tr8;
+
+                var tr9 = (16.2813 / 100)*tr5;
+                tr9 = parseFloat(tr9).toFixed(2);
+                document.getElementById("tr9").textContent = tr9;
+
+                var tr10 = parseFloat(tr5) + parseFloat(tr6) + parseFloat(tr7) + parseFloat(tr8) + parseFloat(tr9);
+                tr10 = parseFloat(tr10).toFixed(2);
+                document.getElementById("tr10").textContent = tr10;
+
+                switch (INSIDE) {
+                    case "yes":
+                    var tr11 = (3.0678/100)*tr10
+                        break;
+                
+                    default:
+                    var tr11 = (1.1839/100)*tr10
+                        break;
+                }
+                tr11 = parseFloat(tr11).toFixed(2);
+                document.getElementById("tr11").textContent = tr11;
+
+                var tr12 = parseFloat(tr10) + parseFloat(tr11);
+                tr12 = parseFloat(tr12).toFixed(2);
+                document.getElementById("tr12").textContent = tr12;
+
+                var tr13 = parseFloat(tr12) + (( parseFloat(salesTax)/100) *tr12);
+                tr13 = parseFloat(tr13).toFixed(2);
+                document.getElementById("tr13").textContent = tr13;
+
+                if (tr13 > 500) {
+                    window.open("https://www.georgiapower.com/residental/save-money-and-energy/productions-programs.html")
+                }
+            };
+
+
+            document.querySelector("#submit").addEventListener("blur",calcPowerBill ,false);
+        </script>
+
+    </div>
+
+
+
+
+    <div class="foot">
+        <p>&copy; Isaac Vaughn 2023</p>
+    </div>
+</body>
+
+</HTML>
