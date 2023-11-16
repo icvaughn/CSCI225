@@ -79,3 +79,8 @@ div.table{
 .visible{
     visibility: visible;
 }
+
+body {
+    background-image: url("/img/Estate.jpg");
+    background-color: #cccccc;
+}
