@@ -1,0 +1,81 @@
+:root{
+    --font-color: hsla(32, 90%, 43%, 0.9);
+    --bar-color: hsla(216, 69%, 45%, 1);
+
+
+}
+
+
+@font-face {
+  
+    font-family: 'yarta';
+    src: url(../data/Yatra_One/YatraOne-Regular.ttf);
+
+}
+
+li{
+    font-family: 'yarta', cursive;
+    font-weight: 400;
+    color: var(--font-color);
+
+    
+}
+
+div.navbar{
+    position: fixed;
+    top: 0%;
+    bottom: 90%;
+    width: 100%;
+    left: 0%;
+    background-color: var(--bar-color); 
+    z-index: 3;
+}
+
+
+div.navbar li{
+    display: inline-block;
+    background-color: hsl(27, 92%, 48%);
+    margin-right: 5%;
+    border-radius: 25px 80%/50px 50%;
+}
+
+div.foot{
+    position: relative;
+    bottom: 0%;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+}
+
+
+
+form{
+    position: fixed;
+    left: 60%;
+    top: 30%;
+    margin: 5%;
+    background-color: rgba(0, 132, 255, 0.637)(0, 255, 255, 0.637);
+
+}
+
+
+div.table{
+    position: relative;
+    left: 50%;
+    top: 30%;
+    margin: 5%;
+    background-color: rgba(0, 132, 255, 0.637)(0, 255, 255, 0.637);
+
+}
+
+
+.invisible{
+    visibility: hidden;
+}
+
+
+.visible{
+    visibility: visible;
+}

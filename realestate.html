@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<HTML lang="en-us">
+
+<head>
+    <title> CSCI225 webpage of isaac</title>
+    <link rel="stylesheet" href="./css/realestate.css">
+</head>
+
+<body>
+
+
+    <div class= "navbar">
+        <ul>
+            <li> <a href="https://www.usca.edu/">Usca Website</a></li>
+            <li><a href="#assi">my assignment</a></li>
+            <li><a href="#contact">Contact Info </a></li>
+            <li><a href="readme">readme</a></li>
+            <li><a href="data/data.txt">data.txt</a></li>
+            <li><a id="loanButton" href="#form">Get Loan </a></li>
+        </ul>
+
+    </div>
+
+
+
+
+    <div id="form" class="invisible">
+        <form>
+            <p>
+            loan amount
+            <input type="text" id="loanAmount">$
+            </p>
+            <p>
+                intrest Rate
+                <input type="text" id="intrestRate">%
+            </p>
+            <p>
+                loan Term
+                <input type="text" id="loanTerm">Years
+            </p>
+            <p>
+                start Year
+                <select name="startyear" id="Year">
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                </select>
+            </p>
+            <p>
+                <input type="submit" name="calculate" id="calculate" value="calculate">
+            </p>
+
+
+        </form>
+
+    </div>
+
+
+ 
+    <div id="table" class="invisible"></div>
+
+
+    <script src="js/realestate.js"></script>
+</body>
+
+</HTML>
